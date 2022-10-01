@@ -60,7 +60,7 @@ if [ -z "$LON" ] && [ -z "$LAT" ]; then
     LON="$(echo "$location" | jq '.location.lng')"
 fi
 
-response=$(curl -sf "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=$LAT&lon=$LON")
+response=$(curl -A "polybar-weather - https://github.com/sasha-kw/polybar-weather" -sf "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=$LAT&lon=$LON")
 
 current_temperature=$(echo "$response" | jq ".properties.timeseries[0].data.instant.details.air_temperature")
 current_conditions=$(echo "$response" | jq ".properties.timeseries[0].data.next_1_hours.summary.symbol_code")
