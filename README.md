@@ -1,9 +1,11 @@
 # polybar-weather
-A simple bash script to get weather conditions for use with [Polybar.](https://github.com/polybar/polybar)
+A simple bash script to get weather conditions to use with [Polybar.](https://github.com/polybar/polybar)
 
 ## Dependencies
 
 * `jq`
+* `cut`
+* `curl`
 * [MET Norway API](https://api.met.no/)
 * [Mozilla location API](https://location.services.mozilla.com/)
 
