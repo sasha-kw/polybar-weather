@@ -53,7 +53,7 @@ get_icon() {
     echo "$icon"
 }
 
-if [ -z "$LON" ] && [ -z "$LAT" ]; then
+if [ -z "$LON" ] || [ -z "$LAT" ]; then
     location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
     LAT="$(echo "$location" | jq '.location.lat')"
     LON="$(echo "$location" | jq '.location.lng')"
